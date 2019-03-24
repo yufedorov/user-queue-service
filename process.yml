@@ -1,0 +1,11 @@
+apps:
+  - script   : dist/index.js
+    name: 'User Queue Service'
+    watch: false
+    ignore_watch: ["logs", "pids"]
+    instances: 1
+    error_file: logs/error.log
+    out_file: logs/user_queue_current.log
+    pid_file: pids/user_queue.pid
+    log_date_format: "YYYY-MM-DD HH:mm:ss.SSS"
+    node_args: "--max-old-space-size=4000 --stack-size=65500"
